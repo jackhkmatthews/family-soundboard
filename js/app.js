@@ -73,7 +73,7 @@ function Soundboard(title, className, facePath, soundBitesObject, facepaths){
       }
     }
     $(section).append(rows);
-    $('main').append(section);
+    document.getElementsByTagName('main')[0].appendChild(section);
   };
 
   this.makeCellsListen            = function makeCellsListen(){
