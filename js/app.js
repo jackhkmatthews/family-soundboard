@@ -8,7 +8,15 @@ function Soundboard(title, className, facePath, soundBitesObject, facepaths){
   this.facePath                   = facePath;
   this.soundBitesObject           = soundBitesObject;
   this.facepaths                  = facepaths;
-  this.soundBitesLocationArray    = Object.values(soundBitesObject);
+  this.generateBitesLocationArray = function() {
+    var array = [];
+    $.each( this.soundBitesObject, function( key, value ) {
+      array.push(value);
+    });
+    return array;
+  };
+  this.soundBitesLocationArray    = this.generateBitesLocationArray();
+  // Object.values(soundBitesObject);
   this.cellText                   = Object.keys(soundBitesObject);
   this.generateCellClassNames     = function() {
     var array =[];
