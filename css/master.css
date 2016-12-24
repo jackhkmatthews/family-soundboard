@@ -13,9 +13,6 @@ img:hover {
   background: rgba(0, 0, 0, 0);
 }
 
-nav {
-}
-
 nav.navbar.navbar-default {
     margin-bottom: 0px;
     background-color: rgba(0, 0, 0, 0);
@@ -35,9 +32,6 @@ body {
     background: linear-gradient(to bottom right, #FF5F6D, #FFC371);
 }
 
-.navbar-header {
-}
-
 button.navbar-toggle {
     border: none;
 }
@@ -55,8 +49,6 @@ div#bs-example-navbar-collapse-1 {
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
     background-color: rgba(0, 0, 0, 0);
 }
-
-button.navbar-toggle {}
 
 span.sr-only {
     color: rgb(51, 51, 51);

@@ -49,7 +49,8 @@ function Soundboard(title, className, facePath, soundBitesObject, facepaths){
     var section = document.createElement('section');
     $(section).attr('class', 'container');
     var divs = [];
-    var rows = [];
+    var row = document.createElement('div');
+    $(row).attr('class', 'row');
     for (var i = 0; i < this.numberOfSoundBites; i++) {
       var img = document.createElement('img');
       var a = document.createElement('a');
@@ -67,14 +68,15 @@ function Soundboard(title, className, facePath, soundBitesObject, facepaths){
       $(a).append([img, p]);
       $(div).append(a);
       divs.push(div);
-      if (i % 3 === 0) {
-        var row = document.createElement('div');
-        $(row).attr('class', 'row');
-        $(row).append(divs);
-        rows.push(row);
-      }
+      // if (i % 3 === 0) {
+      //   var row = document.createElement('div');
+      //   $(row).attr('class', 'row');
+      //   $(row).append(divs);
+      //   rows.push(row);
+      // }
     }
-    $(section).append(rows);
+    $(row).append(divs);
+    $(section).append(row);
     document.getElementsByTagName('main')[0].appendChild(section);
   };
 
