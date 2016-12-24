@@ -114,7 +114,7 @@ var landingPage = {
     $(p).html('Click the links above to take a trip down memomory lane');
     $(container).append([h1, p]);
     $(jumbotron).append(container);
-    $('main').append(jumbotron);
+    document.getElementsByTagName('main')[0].appendChild(jumbotron);
   }
 };
 
