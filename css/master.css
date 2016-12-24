@@ -93,6 +93,7 @@ img {
 
 .jumbotron {
     text-align: center;
+    padding-top: 20vh;
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
