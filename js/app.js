@@ -1,4 +1,4 @@
-console.log('js loaded');
+
 
 var main;
 
@@ -14,8 +14,6 @@ function Soundboard(title, className, facePath, soundBitesObject, facepaths){
     var array =[];
     for (var i = 0; i < this.soundBitesLocationArray.length; i++) {
       var fileName = this.soundBitesLocationArray[i].split('/')[2];
-      console.log(i);
-      console.log(fileName);
       var className = fileName.split('.')[0];
       array.push(className);
     }
@@ -25,7 +23,6 @@ function Soundboard(title, className, facePath, soundBitesObject, facepaths){
   this.numberOfSoundBites         = Object.keys(soundBitesObject).length;
 
   this.start                      = function start(){
-    console.log('soundboard started');
     main = document.getElementsByTagName('main')[0];
     main.innerHTML = '';
     // body.style.backgroundImage = 'url(../' + backgroundImagePath +')';
@@ -58,7 +55,6 @@ function Soundboard(title, className, facePath, soundBitesObject, facepaths){
       var a = document.createElement('a');
       var div = document.createElement('div');
       var p = document.createElement('p');
-      console.log(this.facepaths[i]);
       $(img).attr('src', 'images/' + this.facepaths[i] + '.jpg');
       $(img).attr('class', this.cellClassNames[i] + ' ' + this.className);
       $(a).attr('class', 'thumbnail');
