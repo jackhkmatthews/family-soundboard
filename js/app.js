@@ -2,11 +2,12 @@ console.log('js loaded');
 
 var main;
 
-function Soundboard(title, className, facePath, soundBitesObject){
+function Soundboard(title, className, facePath, soundBitesObject, facepaths){
   this.title                      = title;
   this.className                  = className;
   this.facePath                   = facePath;
   this.soundBitesObject           = soundBitesObject;
+  this.facepaths                  = facepaths;
   this.soundBitesLocationArray    = Object.values(soundBitesObject);
   this.cellText                   = Object.keys(soundBitesObject);
   this.generateCellClassNames     = function() {
@@ -52,12 +53,13 @@ function Soundboard(title, className, facePath, soundBitesObject){
     $(section).attr('class', 'container');
     var divs = [];
     var rows = [];
-    for (var i = 1; i < this.numberOfSoundBites + 1; i++) {
+    for (var i = 0; i < this.numberOfSoundBites; i++) {
       var img = document.createElement('img');
       var a = document.createElement('a');
       var div = document.createElement('div');
       var p = document.createElement('p');
-      $(img).attr('src', this.facePath);
+      console.log(this.facepaths[i]);
+      $(img).attr('src', 'images/' + this.facepaths[i] + '.jpg');
       $(img).attr('class', this.cellClassNames[i] + ' ' + this.className);
       $(a).attr('class', 'thumbnail');
       $(a).css('text-align', 'center');
@@ -123,7 +125,6 @@ var landingPage = {
 var hollySoundboard            = new Soundboard('Holly', 'holly', 'images/holly.jpg',
   {
     'Bagettes': 'sounds/holly/2-bagettes.m4a',
-    'Dickead idiot': 'sounds/holly/dickhead-idiot.m4a',
     'Bye': 'sounds/holly/Bye.m4a',
     'Go away': 'sounds/holly/go-away.m4a',
     'Cowardly cow': 'sounds/holly/Cowardly-cow.m4a',
@@ -132,6 +133,7 @@ var hollySoundboard            = new Soundboard('Holly', 'holly', 'images/holly.
     'Grona Lund': 'sounds/holly/grona-lund.m4a',
     'Happy 2': 'sounds/holly/happy2.m4a',
     'Happy 3': 'sounds/holly/happy3.m4a',
+    'Dickead idiot': 'sounds/holly/dickhead-idiot.m4a',
     'Hello': 'sounds/holly/hello.m4a',
     'Lovely': 'sounds/holly/lovely.m4a',
     'Medicines': 'sounds/holly/medicines.m4a',
@@ -164,7 +166,51 @@ var hollySoundboard            = new Soundboard('Holly', 'holly', 'images/holly.
     'Woof': 'sounds/holly/woof.m4a',
     'Yellow': 'sounds/holly/yellow1.m4a',
     'Crying': 'sounds/holly/crying.m4a'
-  }
+  },
+  [
+    'holly/holly-high',
+    'holly/holly-bath',
+    'holly/holly-school-smile',
+    'holly/holly-high',
+    'holly/holly-bath',
+    'holly/holly-laugh',
+    'holly/holly-school-smile',
+    'holly/holly-bath',
+    'holly/holly-laugh',
+    'holly/holly-school-smile',
+    'holly/holly-bath',
+    'holly/holly-smile',
+    'holly/holly-high',
+    'holly/holly-bath',
+    'holly/holly-smile',
+    'holly/holly-school-smile',
+    'holly/holly-bath',
+    'holly/holly-school-smile',
+    'holly/holly-high',
+    'holly/holly-school-smile',
+    'holly/holly-smile',
+    'holly/holly-school-smile',
+    'holly/holly-laugh',
+    'holly/holly-smile',
+    'holly/holly-laugh',
+    'holly/holly-high',
+    'holly/holly-school-smile',
+    'holly/holly-bath',
+    'holly/holly-laugh',
+    'holly/holly-school-smile',
+    'holly/holly-high',
+    'holly/holly-bath',
+    'holly/holly-high',
+    'holly/holly-school-smile',
+    'holly/holly-high',
+    'holly/holly-school-smile',
+    'holly/holly-laugh',
+    'holly/holly-high',
+    'holly/holly-laugh',
+    'holly/holly-smile',
+    'holly/holly-bath',
+    'holly/holly-smile'
+  ]
 );
 
 var mumSoundboard            = new Soundboard('Mum', 'mum', 'images/mum.jpg',
@@ -216,7 +262,56 @@ var mumSoundboard            = new Soundboard('Mum', 'mum', 'images/mum.jpg',
     'Badding': 'sounds/mum/badding.m4a',
     'TV': 'sounds/mum/TV.m4a',
     'Jack': 'sounds/mum/Jack.m4a'
-  }
+  },
+  [
+    'mum/mum-confused',
+    'mum/mum-hat',
+    'mum/mum-milkshake',
+    'mum/mum-wedding',
+    'mum/mum-sunbadding',
+    'mum/mum-wedding',
+    'mum/mum-hat',
+    'mum/mum-milkshake',
+    'mum/mum-confused',
+    'mum/mum-milkshake',
+    'mum/mum-sunbadding',
+    'mum/mum-confused',
+    'mum/mum-hat',
+    'mum/mum-wedding',
+    'mum/mum-milkshake',
+    'mum/mum-hat',
+    'mum/mum-milkshake',
+    'mum/mum-wedding',
+    'mum/mum-milkshake',
+    'mum/mum-hat',
+    'mum/mum-milkshake',
+    'mum/mum-confused',
+    'mum/mum-milkshake',
+    'mum/mum-confused',
+    'mum/mum-milkshake',
+    'mum/mum-hat',
+    'mum/mum-milkshake',
+    'mum/mum-wedding',
+    'mum/mum-sunbadding',
+    'mum/mum-hat',
+    'mum/mum-sunbadding',
+    'mum/mum-confused',
+    'mum/mum-confused',
+    'mum/mum-wedding',
+    'mum/mum-milkshake',
+    'mum/mum-sunbadding',
+    'mum/mum-hat',
+    'mum/mum-confused',
+    'mum/mum-confused',
+    'mum/mum-confused',
+    'mum/mum-confused',
+    'mum/mum-wedding',
+    'mum/mum-sunbadding',
+    'mum/mum-wedding',
+    'mum/mum-sunbadding',
+    'mum/mum-confused',
+    'mum/mum-wedding'
+  ]
 );
 
 var dadSoundboard            = new Soundboard('Mum', 'dad', 'images/dad.jpg',
@@ -235,11 +330,11 @@ var dadSoundboard            = new Soundboard('Mum', 'dad', 'images/dad.jpg',
     'Hey Mia': 'sounds/dad/hey-mia.m4a',
     'Hejsan Holly': 'sounds/dad/hejsan-holly.m4a',
     'Good lad': 'sounds/dad/good-lad.m4a',
-    'She didn\'t like that last one': 'sounds/dad/she-didnt-like-the-last-one.m4a',
+    'Didn\'t like the last': 'sounds/dad/she-didnt-like-the-last-one.m4a',
     'Dance with Holly': 'sounds/dad/dance-with-holly.m4a',
     'Cutie': 'sounds/dad/being-cute-to-holly.m4a',
     'What have you got?': 'sounds/dad/What-have-you-got.m4a',
-    'Not particularly intersting': 'sounds/dad/not-particulary-intresting.m4a',
+    'Not intersting': 'sounds/dad/not-particulary-intresting.m4a',
     'Say goodnight': 'sounds/dad/Say-goodnight.m4a ',
     'Pièce de résistance': 'sounds/dad/Pista-resistance.m4a',
     'Phone 2': 'sounds/dad/Phone-2.m4a',
@@ -248,7 +343,36 @@ var dadSoundboard            = new Soundboard('Mum', 'dad', 'images/dad.jpg',
     'Hejdå': 'sounds/dad/Hejda.m4a',
     'Go away Jack': 'sounds/dad/Go-away-jack.m4a',
     'Go away Jack 2': 'sounds/dad/Go-away-jack-2.m4a'
-  }
+  },
+  [
+    'dad/dad-eyebrows',
+    'dad/dad-rock',
+    'dad/dad-eyebrows',
+    'dad/dad-rock',
+    'dad/dad-smile',
+    'dad/dad-eyebrows',
+    'dad/dad-smile',
+    'dad/dad-drunk',
+    'dad/dad-wedding',
+    'dad/dad-drunk',
+    'dad/dad-smile',
+    'dad/dad-rock',
+    'dad/dad-wedding',
+    'dad/dad-eyebrows',
+    'dad/dad-smile',
+    'dad/dad-wedding',
+    'dad/dad-drunk',
+    'dad/dad-wedding',
+    'dad/dad-eyebrows',
+    'dad/dad-smile',
+    'dad/dad-drunk',
+    'dad/dad-smile',
+    'dad/dad-drunk',
+    'dad/dad-rock',
+    'dad/dad-wedding',
+    'dad/dad-eyebrows',
+    'dad/dad-smile'
+  ]
 );
 
 
